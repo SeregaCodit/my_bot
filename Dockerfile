@@ -1,6 +1,12 @@
 ARG ROS_DISTRO=lyrical
+ARG TARGETARCH
+# for dev host. Comment om rpi and uncomment next command
+FROM osrf/ros:${ROS_DISTRO}-desktop-full AS base-amd64
 
-FROM osrf/ros:${ROS_DISTRO}-desktop-full
+# for rpi 
+FROM --platform=linux/arm64 ros:${ROS_DISTRO}-ros-base AS base-arm64
+
+FROM base-${TARGETARCH}
 
 RUN apt-get update && apt-get install -y nano \
     && rm -rf /var/lib/apt/lists/*
@@ -55,7 +61,7 @@ ENV ROS_DISTRO=${ROS_DISTRO}
 ENV SHELL=/bin/bash
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN sudo chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
