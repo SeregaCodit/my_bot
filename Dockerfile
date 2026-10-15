@@ -1,9 +1,9 @@
 ARG ROS_DISTRO=lyrical
 ARG TARGETARCH
-# for dev host. Comment om rpi and uncomment next command
+# for dev host on amd64
 FROM osrf/ros:${ROS_DISTRO}-desktop-full AS base-amd64
 
-# for rpi 
+# for arm64
 FROM --platform=linux/arm64 ros:${ROS_DISTRO}-ros-base AS base-arm64
 
 FROM base-${TARGETARCH}
@@ -20,6 +20,45 @@ RUN apt-get update && apt-get install -y \
 
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
+
+RUN apt-get update && apt-get install -y \
+    #dev tools
+    python3-colcon-common-extensions \
+    python3-rosdep \
+    python3-argcomplete \
+    build-essential \
+    cmake \
+    git \
+    # Інструменти для I2C та GPIO (Залізо)
+    i2c-tools \
+    libi2c-dev \
+    python3-gpiozero \
+    v4l-utils \
+    libv4l-dev \
+    libcamera-dev \
+    libopencv-dev \
+    python3-opencv \
+    # Foxglove Bridge (Заміна RQt)
+    ros-${ROS_DISTRO}-foxglove-bridge \
+    # Системні утиліти для збірки libgpiod з сирців
+    autoconf \
+    autoconf-archive \
+    libtool \
+    pkg-config \
+    m4 \
+    python3-dev \
+    python3-setuptools \
+    && rm -rf /var/lib/apt/lists/*
+
+# build libgpiod v2.1 from sources
+WORKDIR /tmp
+RUN git clone --depth 1 --branch v2.1 https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/ && \
+    cd libgpiod && \
+    ./autogen.sh --enable-bindings-cxx --enable-bindings-python --enable-tools --prefix=/usr/local && \
+    make -j$(nproc) && \
+    make install && \
+    ldconfig && \
+    cd .. && rm -rf libgpiod
 
 
 # Create a non-root user or rename default existing
