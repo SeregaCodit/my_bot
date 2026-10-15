@@ -1,0 +1,23 @@
+services:
+  my_bot_ros2_dev:
+    build: .
+    image: my_bot_dev:lyrical
+    container_name: my_bot_dev_container
+    user: ros
+    network_mode: host 
+    ipc: host          
+    privileged: true   
+    group_add:
+      - video
+    volumes:
+      - ./my_bot_dev_ws:/my_bot_dev_ws
+      - /dev:/dev
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - ROS_DOMAIN_ID=42 # must be the same for different computers for comunuccation
+      - DISPLAY=${DISPLAY}
+    devices:
+      - "/dev/video0:/dev/video0"
+      - "/dev/media3:/dev/media3"
+    stdin_open: true
+    tty: true

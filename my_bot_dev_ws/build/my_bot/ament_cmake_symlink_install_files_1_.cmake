@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/my_bot_dev_ws/src/my_bot" FILES "/my_bot_dev_ws/build/my_bot/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/my_bot" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")

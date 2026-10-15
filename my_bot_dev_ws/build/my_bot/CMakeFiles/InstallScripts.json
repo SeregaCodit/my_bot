@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/my_bot_dev_ws/build/my_bot/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

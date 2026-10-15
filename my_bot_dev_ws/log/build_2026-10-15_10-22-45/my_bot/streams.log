@@ -1,0 +1,61 @@
+[0.010s] Invoking command in '/my_bot_dev_ws/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical /usr/bin/cmake /my_bot_dev_ws/src/my_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/my_bot_dev_ws/install/my_bot
+[0.089s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.089s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.089s]   CMake.
+[0.090s] 
+[0.090s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.090s]   to tell CMake that the project requires at least <min> but has been updated
+[0.091s]   to work with policies introduced by <max> or earlier.
+[0.091s] 
+[0.091s] [0m
+[0.253s] -- The C compiler identification is GNU 15.2.0
+[0.375s] -- The CXX compiler identification is GNU 15.2.0
+[0.389s] -- Detecting C compiler ABI info
+[0.497s] -- Detecting C compiler ABI info - done
+[0.510s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.511s] -- Detecting C compile features
+[0.511s] -- Detecting C compile features - done
+[0.521s] -- Detecting CXX compiler ABI info
+[0.618s] -- Detecting CXX compiler ABI info - done
+[0.630s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.631s] -- Detecting CXX compile features
+[0.631s] -- Detecting CXX compile features - done
+[0.647s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[1.244s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.330s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[1.446s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.456s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.456s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.459s] -- Added test 'lint_cmake' to check CMake code style
+[1.462s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.469s] -- Added test 'xmllint' to check XML markup files
+[1.475s] -- Configuring done (1.4s)
+[1.488s] -- Generating done (0.0s)
+[1.490s] -- Build files have been written to: /my_bot_dev_ws/build/my_bot
+[1.493s] Invoked command in '/my_bot_dev_ws/build/my_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical /usr/bin/cmake /my_bot_dev_ws/src/my_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/my_bot_dev_ws/install/my_bot
+[1.494s] Invoking command in '/my_bot_dev_ws/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical /usr/bin/cmake --build /my_bot_dev_ws/build/my_bot -- -j20 -l20
+[1.515s] Invoked command in '/my_bot_dev_ws/build/my_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical /usr/bin/cmake --build /my_bot_dev_ws/build/my_bot -- -j20 -l20
+[1.520s] Invoking command in '/my_bot_dev_ws/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical /usr/bin/cmake --install /my_bot_dev_ws/build/my_bot
+[1.526s] -- Install configuration: ""
+[1.527s] -- Execute custom install script
+[1.528s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/config/empty.yaml
+[1.535s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/description/robot.urdf.xacro
+[1.545s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/launch/rsp.launch.py
+[1.554s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/worlds/empty.world
+[1.563s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/ament_index/resource_index/package_run_dependencies/my_bot
+[1.573s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/ament_index/resource_index/parent_prefix_path/my_bot
+[1.585s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/environment/ament_prefix_path.sh
+[1.597s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/environment/ament_prefix_path.dsv
+[1.608s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/environment/path.sh
+[1.621s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/environment/path.dsv
+[1.632s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/local_setup.bash
+[1.640s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/local_setup.fish
+[1.647s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/local_setup.sh
+[1.656s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/local_setup.zsh
+[1.664s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/local_setup.dsv
+[1.672s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/package.dsv
+[1.680s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/ament_index/resource_index/packages/my_bot
+[1.689s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/cmake/my_botConfig.cmake
+[1.695s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/cmake/my_botConfig-version.cmake
+[1.702s] -- Symlinking: /my_bot_dev_ws/install/my_bot/share/my_bot/package.xml
+[1.714s] Invoked command in '/my_bot_dev_ws/build/my_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical /usr/bin/cmake --install /my_bot_dev_ws/build/my_bot
