@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
     git \
-    # Інструменти для I2C та GPIO (Залізо)
+    # I2C and GPIO tools
     i2c-tools \
     libi2c-dev \
     python3-gpiozero \
@@ -38,9 +38,9 @@ RUN apt-get update && apt-get install -y \
     libcamera-dev \
     libopencv-dev \
     python3-opencv \
-    # Foxglove Bridge (Заміна RQt)
+    # Foxglove Bridge (instead of RQt)
     ros-${ROS_DISTRO}-foxglove-bridge \
-    # Системні утиліти для збірки libgpiod з сирців
+    # system tools for building libgpiod from source
     autoconf \
     autoconf-archive \
     libtool \
@@ -60,6 +60,11 @@ RUN git clone --depth 1 --branch v2.1 https://git.kernel.org/pub/scm/libs/libgpi
     ldconfig && \
     cd .. && rm -rf libgpiod
 
+
+RUN apt-get update && apt-get install -y \
+    ros-lyrical-xacro \
+    ros-lyrical-joint-state-publisher-gui \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user or rename default existing
 ARG USERNAME=ros
@@ -99,8 +104,8 @@ WORKDIR /my_bot_dev_ws
 ENV ROS_DISTRO=${ROS_DISTRO}
 ENV SHELL=/bin/bash
 
-COPY entrypoint.sh /entrypoint.sh
-RUN sudo chmod +x /entrypoint.sh
+COPY --chown=ros:ros entrypoint.sh /home/ros/entrypoint.sh
+RUN chmod +x /home/ros/entrypoint.sh
 
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+ENTRYPOINT ["/home/ros/entrypoint.sh"]
 CMD ["bash"]
