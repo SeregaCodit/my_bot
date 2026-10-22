@@ -143,7 +143,9 @@
         </xacro:inertial_sphere>
      </link>
 
-        <!-- <gazebo reference="custer_wheel">
+        <gazebo reference="custer_wheel">
             <material>Gazebo/Black</material>              
-        </gazebo> -->
+            <mu1 value="0.001"/>
+            <mu2 value="0.001"/>
+        </gazebo>
 </robot>

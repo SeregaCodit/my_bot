@@ -1,8 +1,10 @@
 /my_bot_dev_ws/install/my_bot/share/my_bot/config/empty.yaml
+/my_bot_dev_ws/install/my_bot/share/my_bot/config/gz_bridge.yaml
 /my_bot_dev_ws/install/my_bot/share/my_bot/config/my_bot_view.rviz
 /my_bot_dev_ws/install/my_bot/share/my_bot/description/examples/example_camera_robot.urdf.xacro
 /my_bot_dev_ws/install/my_bot/share/my_bot/description/examples/example_include.xacro
 /my_bot_dev_ws/install/my_bot/share/my_bot/description/examples/example_robot.urdf.xacro
+/my_bot_dev_ws/install/my_bot/share/my_bot/description/gazebo_control.xacro
 /my_bot_dev_ws/install/my_bot/share/my_bot/description/inertial_macros.xacro
 /my_bot_dev_ws/install/my_bot/share/my_bot/description/robot.urdf.xacro
 /my_bot_dev_ws/install/my_bot/share/my_bot/description/robot_core.xacro

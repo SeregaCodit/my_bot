@@ -62,9 +62,23 @@ def generate_launch_description():
         output="screen"
     )
 
+    # gazebo bridge
+    bridge_params = os.path.join(get_package_share_directory(packadge_name), "config", "gz_bridge.yaml")
+
+    ros_gz_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            "--ros-args",
+            "-p",
+            f"config_file:={bridge_params}"
+        ]
+    )
+
     return LaunchDescription([
         rsp,
         world_arg,
         gazebo, 
-        spawn_entity
+        spawn_entity,
+        ros_gz_bridge
     ])
